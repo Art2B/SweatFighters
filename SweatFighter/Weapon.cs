@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 
 namespace SweatFighter
 {
 	public class Weapon:Equipment
 	{
-		private int _init;
-		private int _touchChance;
-		private int _damage;
+		protected int _init;
+		protected int _touchChance;
+		protected int _damage;
 
 		public int init {
 			get { return this._init;}

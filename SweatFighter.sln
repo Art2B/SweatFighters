@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweatFighter", "SweatFighter\SweatFighter.csproj", "{D9D3DCBF-C309-4B4F-B073-2377061FD2CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B107D6D-8BBC-4D69-B859-5077F42B0CB7}"
+	ProjectSection(SolutionItems) = preProject
+		SweatFighter\Weapon.cs = SweatFighter\Weapon.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +18,8 @@ Global
 		{D9D3DCBF-C309-4B4F-B073-2377061FD2CB}.Debug|x86.Build.0 = Debug|x86
 		{D9D3DCBF-C309-4B4F-B073-2377061FD2CB}.Release|x86.ActiveCfg = Release|x86
 		{D9D3DCBF-C309-4B4F-B073-2377061FD2CB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = SweatFighter\SweatFighter.csproj
