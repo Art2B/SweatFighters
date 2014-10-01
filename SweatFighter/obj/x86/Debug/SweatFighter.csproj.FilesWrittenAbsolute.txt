@@ -1,0 +1,5 @@
+/Users/arthur/Projects/SweatFighter/SweatFighter/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/arthur/Projects/SweatFighter/SweatFighter/bin/Debug/SweatFighter.exe.mdb
+/Users/arthur/Projects/SweatFighter/SweatFighter/bin/Debug/SweatFighter.exe
+/Users/arthur/Projects/SweatFighter/SweatFighter/obj/x86/Debug/SweatFighter.exe
+/Users/arthur/Projects/SweatFighter/SweatFighter/obj/x86/Debug/SweatFighter.exe.mdb
