@@ -4,31 +4,50 @@ namespace SweatFighter
 {
 	public class Equipment
 	{
-		protected int cost;
-		protected int parryChance;
+		protected int _cost;
+		protected int _parryChance;
+		protected string _name;
 
-		public int costPublic {
-			get { 
-				return this.cost;
+		public int cost {
+			get { return this._cost;}
+			set{
+				if (value > 0) {
+					this._cost = value;
+				} else {
+					this._cost = 1;
+				}
 			}
-			set{}
 		}
-		public int parryPublic {
-			get { 
-				return this.parryChance;
+		public int parryChance {
+			get { return this._parryChance;}
+			set { 
+				if (value >= 0) {
+					this._parryChance = value;
+				} else {
+					this._parryChance = 0;
+				}
 			}
-			set { }
+		}
+		public string name {
+			get { 
+				return this._name;
+			}
+			set { 
+				if (value != String.Empty) {
+					this._name = value;
+				}			
+			}
 		}
 
-		public Equipment (int n_cost)
+		public Equipment (string n_name, int n_cost)
 		{
-			this.cost = n_cost;
-			this.parryChance = 0;
+			cost = n_cost;
+			name = n_name;
+			parryChance = 0;
 		}
 
-		public Equipment (int n_cost, int n_parry):this(n_cost) {
-			this.parryChance = n_parry;
+		public Equipment (string n_name, int n_cost, int n_parry):this(n_name, n_cost) {
+			parryChance = n_parry;
 		}
 	}
 }
-

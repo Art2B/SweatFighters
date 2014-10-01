@@ -2,8 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="SweatFighter/Program.cs">
     <Files>
-      <File FileName="SweatFighter/Program.cs" Line="28" Column="28" />
-      <File FileName="SweatFighter/Equipment.cs" Line="20" Column="20" NotebookId="1" />
+      <File FileName="SweatFighter/Program.cs" Line="1" Column="1" />
+      <File FileName="SweatFighter/Equipment.cs" Line="10" Column="10" />
+      <File FileName="SweatFighter/Arme.cs" Line="20" Column="20" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
