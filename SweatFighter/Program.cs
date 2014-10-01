@@ -18,6 +18,23 @@ namespace SweatFighter
 			Console.WriteLine ("Voici un "+dague.name+". Coût: "+dague.cost+". Initiative: "+dague.init+". Chance de toucher: "+dague.touchChance+". Dégâts: "+dague.damage);
 			Console.WriteLine ("Voici un "+bouclier.name+". Chance de parade:"+bouclier.parryChance+"%. Son coût: "+bouclier.cost);
 			Console.WriteLine ("Voici un "+trident.name+". Coût: "+trident.cost+". Initiative: "+trident.init+". Chance de toucher: "+trident.touchChance+". Dégâts: "+trident.damage);
+
+			Gladiator jonJon = new Gladiator ("Jon Snow");
+//			for (int i = 0; i < 5; i++) {
+//				jonJon.nbFights++;
+//			}
+//			for (int i = 0; i < 3; i++) {
+//				jonJon.nbVictory++;
+//			}
+
+			jonJon.addEquipment (dague);
+			jonJon.addEquipment (bouclier);
+			jonJon.addEquipment (trident);
+
+			Console.WriteLine ("Voici l'équipement de Jon Snow :");
+			foreach (Equipment b_equip in jonJon.inventory) {
+				Console.WriteLine (b_equip.name);
+			}
 		}
 	}
 }
