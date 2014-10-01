@@ -8,6 +8,8 @@ namespace SweatFighter
 		private string _name;
 		private List<Equipment> _inventory = new List<Equipment>();
 		private int _equipmentPoints;
+		private int _lifePoint;
+		private Team _team;
 
 		public List<Equipment> inventory {
 			get {
@@ -27,15 +29,29 @@ namespace SweatFighter
 					this._name = value;
 				} else {
 					Random random = new Random();
-					this._name = "Gladiator #"+random.Next(0, 10000).ToString();
+					this._name = "Gladiateur #"+random.Next(0, 10000).ToString();
 				}
 			}
 		}
-
+		public int lifePoint {
+			get { return this._lifePoint; }
+			set { 
+				if (this.lifePoint - value < 0) {
+					this._lifePoint = 0;
+				} else {
+					this._lifePoint = value;
+				}
+			}
+		}
+		public Team team {
+			get {return _team;}
+			set { _team = value;}
+		}
 
 		public Gladiator (string n_name){
 			name = n_name;
 			equipmentPoints = 10;
+			lifePoint = 1;
 		}
 			
 		public void addEquipment(Equipment n_equip){
@@ -43,7 +59,7 @@ namespace SweatFighter
 				equipmentPoints -= n_equip.cost;
 				this._inventory.Add (n_equip);
 			} else {
-				Console.WriteLine ("Vous n'avez pas assez de points d'équipements pour vous équiper de "+n_equip.name);
+				Console.WriteLine ("Vous ne pouvez pas vous équiper de "+n_equip.name);
 			}
 		}
 	}

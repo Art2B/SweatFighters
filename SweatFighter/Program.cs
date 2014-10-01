@@ -20,6 +20,7 @@ namespace SweatFighter
 			Console.WriteLine ("Voici un "+trident.name+". Coût: "+trident.cost+". Initiative: "+trident.init+". Chance de toucher: "+trident.touchChance+". Dégâts: "+trident.damage);
 
 			Gladiator jonJon = new Gladiator ("Jon Snow");
+			Gladiator Conan = new Gladiator ("Conan");
 //			for (int i = 0; i < 5; i++) {
 //				jonJon.nbFights++;
 //			}
@@ -29,12 +30,17 @@ namespace SweatFighter
 
 			jonJon.addEquipment (dague);
 			jonJon.addEquipment (bouclier);
-			jonJon.addEquipment (trident);
+			Conan.addEquipment (dague);
+			Conan.addEquipment (dague);
 
-			Console.WriteLine ("Voici l'équipement de Jon Snow :");
-			foreach (Equipment b_equip in jonJon.inventory) {
-				Console.WriteLine (b_equip.name);
-			}
+			Team superTeam = new Team ("Les guerriers des steppes", "");
+			superTeam.addGladiator (jonJon);
+			superTeam.addGladiator (Conan);
+
+			Console.WriteLine (Conan.team.name);
+
+			Team yolo = new Team ("", "");
+			yolo.addGladiator (Conan);
 		}
 	}
 }
