@@ -2,7 +2,7 @@
 
 namespace SweatFighter
 {
-	public class Trident:Weapon
+	public class Filet:Weapon
 	{
 		private int _quantity;
 		public int quantity {
@@ -12,15 +12,15 @@ namespace SweatFighter
 			}
 		}
 
-		public Trident (string n_name, int n_cost, int n_init, int n_touch, int n_damage):base(n_name, n_cost, n_init, n_touch, n_damage)
+		public Filet (string n_name, int n_cost, int n_init, int n_touch, int n_damage):base(n_name, n_cost, n_init, n_touch, n_damage)
 		{
 			quantity = 1;
 		}
 
-		public void tridentSpecial(){
+		public void filetSpecial(){
 			Console.WriteLine (quantity);
 			quantity--;
-			Console.WriteLine ("Triden Spécial !");
+			Console.WriteLine ("Filet Spécial !");
 			Console.WriteLine (quantity);
 		}
 	}

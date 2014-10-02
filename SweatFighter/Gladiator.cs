@@ -10,6 +10,7 @@ namespace SweatFighter
 		private int _equipmentPoints;
 		private int _lifePoint;
 		private Team _team;
+		private Random random = new Random();
 
 		public List<Equipment> inventory {
 			get {
@@ -36,11 +37,7 @@ namespace SweatFighter
 		public int lifePoint {
 			get { return this._lifePoint; }
 			set { 
-				if (this.lifePoint - value < 0) {
-					this._lifePoint = 0;
-				} else {
-					this._lifePoint = value;
-				}
+				this._lifePoint = value;
 			}
 		}
 		public Team team {
@@ -61,6 +58,39 @@ namespace SweatFighter
 			} else {
 				Console.WriteLine ("Vous ne pouvez pas vous équiper de "+n_equip.name);
 			}
+		}
+		public bool attack(Gladiator target, Weapon armae){
+			Console.WriteLine (this.name + " attaque " + target.name + " avec "+ armae.name);
+			int diceRoll = this.random.Next (0, 100); // Roll the dice !!!
+			if (diceRoll < armae.touchChance) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		public bool defend() {
+			bool result = false;
+			foreach (Equipment b_equip in this.inventory) {
+				if (b_equip.parryChance > 0) {
+					int diceRoll = this.random.Next (0, 100); // Roll the dice !!!
+					if (diceRoll < b_equip.parryChance) {
+						Console.WriteLine ("L'armure de "+this.name+" bloque le coup !");
+						result = true;
+					}
+				}
+			}
+			return result;
+		}
+		public List<Weapon> weaponWithInit(int n_init){
+			List<Weapon> weaponToUse = new List<Weapon>();
+			foreach(Equipment b_equip in this.inventory){
+				if (b_equip.GetType ().Name == "Weapon") {
+					if (((Weapon)b_equip).init == n_init) {
+						weaponToUse.Add((Weapon)b_equip);
+					}
+				}
+			}
+			return weaponToUse;
 		}
 	}
 }

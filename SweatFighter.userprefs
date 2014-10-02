@@ -1,12 +1,24 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SweatFighter/Team.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SweatFighter/Weapon.cs">
     <Files>
-      <File FileName="SweatFighter/Program.cs" Line="31" Column="31" />
-      <File FileName="SweatFighter/Trident.cs" Line="4" Column="4" NotebookId="1" />
-      <File FileName="SweatFighter/Gladiator.cs" Line="18" Column="18" NotebookId="1" />
-      <File FileName="SweatFighter/Team.cs" Line="4" Column="4" NotebookId="1" />
+      <File FileName="SweatFighter/Program.cs" Line="22" Column="22" />
+      <File FileName="SweatFighter/Gladiator.cs" Line="17" Column="17" />
+      <File FileName="SweatFighter/Team.cs" Line="12" Column="12" />
+      <File FileName="SweatFighter/Player.cs" Line="10" Column="10" NotebookId="1" />
+      <File FileName="SweatFighter/Fight.cs" Line="48" Column="48" NotebookId="1" />
+      <File FileName="SweatFighter/Weapon.cs" Line="4" Column="4" NotebookId="1" />
+      <File FileName="SweatFighter/Equipment.cs" Line="29" Column="29" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="SweatFighter" expanded="True">
+            <Node name="Weapon.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

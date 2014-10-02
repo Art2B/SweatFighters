@@ -8,6 +8,7 @@ namespace SweatFighter
 		private string _name;
 		private string _description;
 		private List<Gladiator> _roster = new List <Gladiator>();
+		private Player _player;
 
 		public string name {
 			get { return this._name;}
@@ -35,6 +36,10 @@ namespace SweatFighter
 				return this._roster;
 			}
 		}
+		public Player player {
+			get { return this._player;}
+			set { this._player = value;}
+		}
 
 		public Team (string n_name, string n_description)
 		{
@@ -42,11 +47,13 @@ namespace SweatFighter
 			description = n_description;
 		}
 		public void addGladiator(Gladiator n_gladiator){
-			if (n_gladiator.team==null) {
+			if (roster.Count >= 3) {
+				Console.WriteLine (this.name+" a atteint son nombre maximum de gladiateurs.");
+			} else if(n_gladiator.team!=null){
+				Console.WriteLine (n_gladiator.name+" est déjà dans l'équipe "+n_gladiator.team.name);
+			} else {
 				n_gladiator.team = this;
 				this._roster.Add (n_gladiator);
-			} else {
-				Console.WriteLine (n_gladiator.name+" est déjà dans une équipe !");
 			}
 		}
 	}
