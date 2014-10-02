@@ -58,6 +58,12 @@ namespace SweatFighter
 					cLheureDuDuDuDuDuDuDuel = false;
 				}
 			}
+			foreach (Gladiator glad in firstOponent.roster) {
+				glad.lifePoint = 1;
+			}
+			foreach (Gladiator glad in secondOponent.roster) {
+				glad.lifePoint = 1;
+			}
 		}
 		public void round(Gladiator firstFighter, Gladiator secondFighter){
 			for (int i = 5; i >= 1; i--){
