@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SweatFighter
 {
@@ -17,11 +17,14 @@ namespace SweatFighter
 			quantity = 1;
 		}
 
-		public void filetSpecial(){
-			Console.WriteLine (quantity);
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
+
+		public void filetSpecial(Gladiator cible){
 			quantity--;
-			Console.WriteLine ("Filet Spécial !");
-			Console.WriteLine (quantity);
+			cible.touchByFilet = true;
 		}
 	}
 }

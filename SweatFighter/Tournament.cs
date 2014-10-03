@@ -47,15 +47,31 @@ namespace SweatFighter
 				}
 			}
 			if (qualifiedNextRound.Count == 1) {
-				Console.WriteLine ("\n\nVoici les gagnants");
+				Console.WriteLine ("\n\nVoici les gagnants du tournoi: "+qualifiedNextRound[0].name);
 			} else {
-				Console.WriteLine ("\n\nQualifiés pour le prochain tour");
-			}
-			foreach (Team b_team in qualifiedNextRound) {
-				Console.WriteLine (b_team.name);
-			}
+				// Check if the number is pair and play on it if nope
+				if (qualifiedNextRound.Count % 2 == 1) {
+					List <Team> potentialSave = new List<Team> ();
+					bool insertIntoPotential = true;
+					foreach(Team b_team in qualified){
+						foreach(Team b_quali in qualifiedNextRound){
+							if (b_quali == b_team) {
+								insertIntoPotential = false;
+								break;						
+							}
+						}
+						if (insertIntoPotential)
+							potentialSave.Add (b_team);
+					}
+					Random random = new Random();
+					int happyTeam = random.Next (0, potentialSave.Count);
+					qualifiedNextRound.Add(potentialSave[happyTeam]);			
+				}
 
-			if (qualifiedNextRound.Count > 1) {
+				Console.WriteLine ("\n\nQualifiés pour le prochain tour");
+				foreach (Team b_team in qualifiedNextRound) {
+					Console.WriteLine (b_team.name);
+				}
 				this.round (qualifiedNextRound);
 			}
 		}

@@ -43,6 +43,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Tournament.cs" />
+    <Compile Include="Filet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

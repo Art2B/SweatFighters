@@ -10,6 +10,7 @@ namespace SweatFighter
 		private int _equipmentPoints;
 		private int _lifePoint;
 		private Team _team;
+		private bool _touchByFilet;
 		private Random random = new Random();
 
 		public List<Equipment> inventory {
@@ -44,6 +45,10 @@ namespace SweatFighter
 			get {return _team;}
 			set { _team = value;}
 		}
+		public bool touchByFilet {
+			get { return this._touchByFilet; }
+			set { this._touchByFilet = value; }
+		}
 
 		public Gladiator (string n_name){
 			name = n_name;
@@ -62,6 +67,8 @@ namespace SweatFighter
 		public bool attack(Gladiator target, Weapon armae){
 			Console.WriteLine (this.name + " attaque " + target.name + " avec "+ armae.name);
 			int diceRoll = this.random.Next (1, 101); // Roll the dice !!!
+			if (this.touchByFilet)
+				diceRoll *= 2;
 			if (diceRoll < armae.touchChance) {
 				return true;
 			} else {
@@ -84,7 +91,7 @@ namespace SweatFighter
 		public List<Weapon> weaponWithInit(int n_init){
 			List<Weapon> weaponToUse = new List<Weapon>();
 			foreach(Equipment b_equip in this.inventory){
-				if (b_equip.GetType ().Name == "Weapon") {
+				if (b_equip.GetType ().Name == "Weapon" || b_equip.GetType ().Name == "Filet") {
 					if (((Weapon)b_equip).init == n_init) {
 						weaponToUse.Add((Weapon)b_equip);
 					}

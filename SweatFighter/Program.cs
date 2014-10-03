@@ -14,21 +14,21 @@ namespace SweatFighter
 			Weapon lance = new Weapon ("Lance", 7, 4, 50, 1);
 			Weapon trident = new Weapon ("Trident", 7, 3, 40, 1, 10);
 			// Filet goes here
+			Filet filetOriginal = new Filet ("Filet", 3, 5, 30, 0);
+			// Get a clone of filet: (Filet)filetOriginal.Clone();
 			// Armures
 			Equipment bouclier = new Equipment ("Bouclier", 8, 30);
 			Equipment targe = new Equipment ("Targe", 5, 20);
 			Equipment casque = new Equipment ("Casque", 2, 10);
-
-//			Console.WriteLine ("Voici un "+dague.name+". Coût: "+dague.cost+". Initiative: "+dague.init+". Chance de toucher: "+dague.touchChance+". Dégâts: "+dague.damage);
-//			Console.WriteLine ("Voici un "+bouclier.name+". Chance de parade:"+bouclier.parryChance+"%. Son coût: "+bouclier.cost);
-//			Console.WriteLine ("Voici un "+trident.name+". Coût: "+trident.cost+". Initiative: "+trident.init+". Chance de toucher: "+trident.touchChance+". Dégâts: "+trident.damage);
 
 			Player Martin = new Player ("Georges", "Martin", "Martin");
 			Player Arthur = new Player ("Arthur", "Pendragon", "Roi Arthur");
 			Player Tolkien = new Player ("J.R.R.", "Tolkien", "Tolkien");
 			Player Lucas = new Player ("Georges", "Lucas", "G.Lucas");
 
+			// ******************
 			// Compagnie de l'Anneau
+			// ******************
 			Gladiator Aragorn = new Gladiator ("Aragorn");
 			Aragorn.addEquipment (epee);
 			Aragorn.addEquipment (dague);
@@ -43,9 +43,11 @@ namespace SweatFighter
 			CompagnieDeLAnneau.addGladiator (Aragorn);
 			CompagnieDeLAnneau.addGladiator (Legolas);
 			CompagnieDeLAnneau.addGladiator (Boromir);
-			//Ordre Jedi
+			// ******************
+			// Ordre Jedi
+			// ******************
 			Gladiator Obiwan = new Gladiator ("Obiwan Kenobi");
-			Obiwan.addEquipment (lance);
+			Obiwan.addEquipment (dague);
 			Obiwan.addEquipment (casque);
 			Gladiator Yoda = new Gladiator ("Yoda");
 			Yoda.addEquipment (trident);
@@ -57,7 +59,9 @@ namespace SweatFighter
 			OrdreJedi.addGladiator (Obiwan);
 			OrdreJedi.addGladiator (Yoda);
 			OrdreJedi.addGladiator (Anakin);
+			// ******************
 			// Game of Thrones
+			// ******************
 			Gladiator Oberyn = new Gladiator ("Oberyn Martell");
 			Oberyn.addEquipment (lance);
 			Oberyn.addEquipment (casque);
@@ -71,7 +75,9 @@ namespace SweatFighter
 			GoT.addGladiator (Oberyn);
 			GoT.addGladiator (Snow);
 			GoT.addGladiator (Jaime);
+			// ******************
 			// Arthur & co
+			// ******************
 			Gladiator RoiArthur = new Gladiator("Roi Arthur");
 			RoiArthur.addEquipment (epee);
 			RoiArthur.addEquipment (targe);

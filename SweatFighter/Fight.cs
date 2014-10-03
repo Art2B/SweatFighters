@@ -106,11 +106,15 @@ namespace SweatFighter
 			bool result = false;
 			if (attack.attack (defense, attackWeapon)) {
 				Console.WriteLine ("Le coup porte");
-				if (!defense.defend ()) {
-					Console.WriteLine (defense.name + " est hors combat.");
-					defense.lifePoint = 0;
-					attack.nbVictory++;
-					result = true;
+				if (attackWeapon.GetType ().Name != "Filet") {
+					if (!defense.defend ()) {
+						Console.WriteLine (defense.name + " est hors combat.");
+						defense.lifePoint -= attackWeapon.damage;
+						attack.nbVictory++;
+						result = true;
+					}			
+				} else {
+					((Filet)attackWeapon).filetSpecial (defense);
 				}
 			} else {
 				Console.WriteLine ("Le coup rate.");
@@ -120,7 +124,12 @@ namespace SweatFighter
 		// Heal gladiators
 		public void healteam(Team n_team){
 			foreach (Gladiator glad in n_team.roster) {
+				glad.touchByFilet = false;
 				glad.lifePoint = 1;
+				foreach(Equipment b_equip in glad.inventory){
+					if (b_equip.GetType ().Name == "Filet")
+						((Filet)b_equip).quantity = 1;
+				}
 			}
 		}
 	}
