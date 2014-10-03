@@ -27,13 +27,14 @@ namespace SweatFighter
 			secondOponent = n_second;
 		}
 
-		public void beginFight() {
+		public Team beginFight() {
 			Console.WriteLine ("Le combat commence entre "+firstOponent.name+" et "+secondOponent.name);
-			bool cLheureDuDuDuDuDuDuDuel = true;
+			bool duelTime = true;
 			Gladiator firstFighter = firstOponent.roster [this.firstFighterIndex];
 			Gladiator secondFighter = secondOponent.roster[this.secondFighterIndex];
-			// Ceci représente les passes d'armes
-			while (cLheureDuDuDuDuDuDuDuel) {
+			bool result = false;
+
+			while (duelTime) {
 				firstFighter.nbFights++;
 				secondFighter.nbFights++;
 				while (firstFighter.lifePoint > 0 && secondFighter.lifePoint > 0) 
@@ -46,23 +47,27 @@ namespace SweatFighter
 				} else {
 					if (this.firstFighterIndex > this.secondFighterIndex) {
 						Console.WriteLine (secondOponent.name+" a gagné le combat !");
+						result = true;
 						firstOponent.nbFights++;
 						secondOponent.nbFights++;
 						secondOponent.nbVictory++;
 					} else {
 						Console.WriteLine (firstOponent.name+" a gagné le combat !");
+						result = false;
 						firstOponent.nbFights++;
 						firstOponent.nbVictory++;
 						secondOponent.nbFights++;
 					}
-					cLheureDuDuDuDuDuDuDuel = false;
+					duelTime = false;
 				}
 			}
-			foreach (Gladiator glad in firstOponent.roster) {
-				glad.lifePoint = 1;
-			}
-			foreach (Gladiator glad in secondOponent.roster) {
-				glad.lifePoint = 1;
+			// Heal Glad
+			healteam (firstOponent);
+			healteam (secondOponent);
+			if (result == false) {
+				return firstOponent;
+			} else {
+				return secondOponent;
 			}
 		}
 		public void round(Gladiator firstFighter, Gladiator secondFighter){
@@ -91,7 +96,6 @@ namespace SweatFighter
 					}
 				}
 				if (needBreak) {
-					Console.WriteLine ("On stop le duel");
 					break;
 				}
 			}		
@@ -112,6 +116,12 @@ namespace SweatFighter
 				Console.WriteLine ("Le coup rate.");
 			}
 			return result;
+		}
+		// Heal gladiators
+		public void healteam(Team n_team){
+			foreach (Gladiator glad in n_team.roster) {
+				glad.lifePoint = 1;
+			}
 		}
 	}
 }

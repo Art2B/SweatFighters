@@ -61,7 +61,7 @@ namespace SweatFighter
 		}
 		public bool attack(Gladiator target, Weapon armae){
 			Console.WriteLine (this.name + " attaque " + target.name + " avec "+ armae.name);
-			int diceRoll = this.random.Next (0, 100); // Roll the dice !!!
+			int diceRoll = this.random.Next (1, 101); // Roll the dice !!!
 			if (diceRoll < armae.touchChance) {
 				return true;
 			} else {
@@ -72,7 +72,7 @@ namespace SweatFighter
 			bool result = false;
 			foreach (Equipment b_equip in this.inventory) {
 				if (b_equip.parryChance > 0) {
-					int diceRoll = this.random.Next (0, 100); // Roll the dice !!!
+					int diceRoll = this.random.Next (1, 101); // Roll the dice !!!
 					if (diceRoll < b_equip.parryChance) {
 						Console.WriteLine ("L'armure de "+this.name+" bloque le coup !");
 						result = true;

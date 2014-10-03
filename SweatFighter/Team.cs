@@ -41,10 +41,11 @@ namespace SweatFighter
 			set { this._player = value;}
 		}
 
-		public Team (string n_name, string n_description)
+		public Team (string n_name, string n_description, Player n_player)
 		{
 			name = n_name;
 			description = n_description;
+			player = n_player;
 		}
 		public void addGladiator(Gladiator n_gladiator){
 			if (roster.Count >= 3) {
